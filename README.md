@@ -84,22 +84,7 @@ and text generation are not implemented yet.
 
 ## Checks
 
-Run the model forward-pass, next-token loss, and gradient check:
-
-```bash
-uv run python scripts/verify_model.py
-```
-
-Run the environment check for GPU matrix multiplication, automatic
-differentiation, a decreasing optimization loss, and an Orbax checkpoint
-round-trip:
-
-```bash
-uv run python scripts/verify_environment.py
-```
-
-The environment check requires JAX to detect a GPU and fails if no GPU is
-available. To run the test suite and code checks:
+To run the test suite and code checks:
 
 ```bash
 uv run pytest

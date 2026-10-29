@@ -15,7 +15,7 @@ echo "==> Ruff format (verify formatting)"
 uv run ruff format --check .
 
 echo "==> Mypy"
-uv run mypy jax_llm scripts tests
+uv run mypy jax_llm tests
 
 echo "==> Pytest"
 uv run pytest
