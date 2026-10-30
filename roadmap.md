@@ -29,7 +29,7 @@ Our primary components will be:
 | Tokenizers | Training and using a tokenizer |
 | NumPy and Python | Data preparation, preprocessing, and evaluation |
 
-We'll use **Flax NNX** rather than introducing both the old and new Flax APIs. NNX is the newer API recommended for new Flax projects, and official examples demonstrate building and training small Transformers with JAX and NNX. [Flax](https://flax.readthedocs.io/en/stable/?utm_source=chatgpt.com)
+We'll use **Flax NNX** rather than introducing both the old and new Flax APIs. NNX is the newer API recommended for new Flax projects, and official examples demonstrate building and training small Transformers with JAX and NNX. [Flax](https://flax.readthedocs.io/en/stable/)
 
 We'll begin by checking:
 
@@ -43,7 +43,7 @@ We'll also establish reproducible random seeds, experiment configuration files, 
 
 **Why start here?** Debugging model code, CUDA compatibility, and training behavior simultaneously makes problems unnecessarily difficult to isolate.
 
-One hardware detail matters: the appropriate JAX installation depends on your operating system, GPU architecture, and NVIDIA driver. JAX currently documents separate CUDA 12 and CUDA 13 installation options, with different GPU and driver requirements. We'll choose the correct one after identifying your hardware. [JAX Documentation](https://docs.jax.dev/en/latest/installation.html?utm_source=chatgpt.com)
+One hardware detail matters: the appropriate JAX installation depends on your operating system, GPU architecture, and NVIDIA driver. JAX currently documents separate CUDA 12 and CUDA 13 installation options, with different GPU and driver requirements. We'll choose the correct one after identifying your hardware. [JAX Documentation](https://docs.jax.dev/en/latest/installation.html)
 
 ## Step 2. Choose our initial model architecture
 
@@ -395,7 +395,7 @@ For the first implementation, we should consider:
 
 We can implement the training loop using JAX, although the rollout and optimization logic will take more care than the SFT loop.
 
-As an alternative reference, Google's JAX-native Tunix project includes SFT and reinforcement-learning methods such as GRPO. Its initial positioning emphasizes TPU-based training, particularly alongside MaxText, so we'll evaluate its suitability rather than assume it is the best fit for a single consumer NVIDIA GPU. [Google Developers Blog](https://developers.googleblog.com/en/introducing-tunix-a-jax-native-library-for-llm-post-training/?utm_source=chatgpt.com)
+As an alternative reference, Google's JAX-native Tunix project includes SFT and reinforcement-learning methods such as GRPO. Its initial positioning emphasizes TPU-based training, particularly alongside MaxText, so we'll evaluate its suitability rather than assume it is the best fit for a single consumer NVIDIA GPU. [Google Developers Blog](https://developers.googleblog.com/en/introducing-tunix-a-jax-native-library-for-llm-post-training/)
 
 ### The most important experimental question
 

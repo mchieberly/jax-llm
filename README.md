@@ -52,36 +52,6 @@ For the CUDA 13 dependency group on a compatible NVIDIA system:
 uv sync --all-groups --extra cuda
 ```
 
-## Quick start
-
-Create a small model and run a batch of token IDs through it:
-
-```python
-import jax.numpy as jnp
-from flax import nnx
-
-from jax_llm import DecoderLM, TransformerConfig
-
-config = TransformerConfig(
-    vocab_size=128,
-    hidden_size=64,
-    num_layers=2,
-    num_heads=4,
-    mlp_size=128,
-    max_seq_len=32,
-)
-model = DecoderLM(config, rngs=nnx.Rngs(0))
-
-token_ids = jnp.array([[1, 5, 9, 2]])  # Shape: [batch, sequence]
-logits = model(token_ids)  # Shape: [batch, sequence, vocab_size]
-print(logits.shape)
-```
-
-`token_ids` must be a rank-2 integer array, and its sequence length cannot
-exceed `max_seq_len`. The output contains a vocabulary-sized logit vector at
-each input position. The model accepts token IDs directly; tokenizer loading
-and text generation are not implemented yet.
-
 ## Checks
 
 To run the test suite and code checks:
